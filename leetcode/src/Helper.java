@@ -56,7 +56,60 @@ public class Helper {
         //helper.testMaximumDepthofBinaryTree();
         //helper.testMinimumDepthofBinaryTree();
         //helper.testBinaryTreeLevelOrderTraversal();
-        helper.testBinaryTreeLevelOrderTraversalII();
+        //helper.testBinaryTreeLevelOrderTraversalII();
+        //helper.testPathSum();
+        //helper.testPathSumII();
+        //helper.testSymmetricTree();
+        helper.testBalancedBinaryTree();
+    }
+    public void testBalancedBinaryTree() {
+        BalancedBinaryTree usage = new BalancedBinaryTree();
+        int[] nums = {1, 2, -1, -1, 3, -1, -1};
+        BinaryTree myTree = new BinaryTree();
+        TreeNode tree = myTree.createBinaryTree(nums);
+        if (usage.isBalanced(tree)) {
+            System.out.println("This tree is balanced!");
+        } else {
+            System.out.println("This tree is unbalanced!");
+        }
+    }
+    public void testSymmetricTree() {
+        SymmetricTree usage = new SymmetricTree();
+        int[] nums = {1, 2, 3, -1, -1, 4, -1, -1, 2, 4, -1, -1, 3, -1, -1};
+        //int[] nums = {1, 2,-1, 3, -1, -1, 2, -1, 3, -1, -1};
+        BinaryTree myTree = new BinaryTree();
+        TreeNode tree = myTree.createBinaryTree(nums);
+        if (usage.isSymmetric(tree)) {
+            System.out.println("This tree is symmetric tree!");
+        } else {
+            System.out.println("This tree is not symmetric tree!");
+        }
+    }
+    public void testPathSumII() {
+        PathSumII usage = new PathSumII();
+        int sum = 22;
+        int[] nums = {5, 4, 11, 7, -1, -1, 2, -1, -1, -1, 8, 13, -1, -1, 4, 5, -1, -1, 1, -1, -1};
+        //int sum = 1;
+        //int[] nums = {1, 2, -1, -1, -1};
+        BinaryTree myTree = new BinaryTree();
+        TreeNode tree = myTree.createBinaryTree(nums);
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        result = usage.pathSum(tree, sum);
+        System.out.println(result);
+    }
+    public void testPathSum() {
+        PathSum usage = new PathSum();
+        //int sum = 22;
+        //int[] nums = {5, 4, 11, 7, -1, -1, 2, -1, -1, -1, 8, 13, -1, -1, 4, -1, 1, -1, -1};
+        int sum = 1;
+        int[] nums = {1, 2, -1, -1, -1};
+        BinaryTree myTree = new BinaryTree();
+        TreeNode tree = myTree.createBinaryTree(nums);
+        if (usage.hasPathSum(tree, sum)) {
+            System.out.println("This tree has the path of " + sum);
+        } else {
+            System.out.println("This tree does not have the path of " + sum);
+        }
     }
     public void testBinaryTreeLevelOrderTraversalII() {
         BinaryTreeLevelOrderTraversalII usage = new BinaryTreeLevelOrderTraversalII();
