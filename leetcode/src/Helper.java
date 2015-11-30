@@ -60,7 +60,61 @@ public class Helper {
         //helper.testPathSum();
         //helper.testPathSumII();
         //helper.testSymmetricTree();
-        helper.testBalancedBinaryTree();
+        //helper.testBalancedBinaryTree();
+        //helper.testLinkedListCycle();
+        //helper.testLinkedListCycleII();
+        //helper.testTwoSum();
+        helper.testAddTwoNumbers();
+
+    }
+    public void testAddTwoNumbers() {
+        AddTwoNumbers usage = new AddTwoNumbers();
+        int[] nums1 = {2, 7, 9};
+        int[] nums2 = {8, 9, 3};
+        ListLink myLink = new ListLink();
+        ListNode l1 = myLink.createListLink(nums1);
+        myLink.display();
+        ListNode l2 = myLink.createListLink(nums2);
+        myLink.display();
+        ListNode res = usage.addTwoNumbers(l1, l2);
+        myLink.display(res);
+    }
+    public void testTwoSum() {
+        TwoSum usage = new TwoSum();
+        int[] nums = {2, 7, 11, 15};
+        int target = 9;
+        int[] res = usage.twoSum(nums, target);
+        System.out.println(res[0] + " " + res[1]);
+    }
+    public void testLinkedListCycleII() {
+        LinkedListCycleII usage = new LinkedListCycleII();
+        int[] nums = {1, 2, 3, 4, 5, 6};
+        ListLink myLink = new ListLink();
+        ListNode head = myLink.createListLink(nums);
+        myLink.display();
+        //ListNode current = head;
+        myLink.tail.next = head.next.next;
+        ListNode res = usage.detectCycle(head);
+        if (res != null) {
+            System.out.println(res.val);
+        } else {
+            System.out.println("No circle!");
+        }
+
+    }
+    public void testLinkedListCycle() {
+        LinkedListCycle usage = new LinkedListCycle();
+        int[] nums = {1, 2, 3, 4, 5, 6};
+        ListLink myLink = new ListLink();
+        ListNode head = myLink.createListLink(nums, 4);
+        myLink.display();
+        //ListNode current = head;
+        myLink.tail.next = head.next.next;
+        if (usage.hasCycle(head)) {
+            System.out.println("This list has circle!");
+        } else {
+            System.out.println("This list does not has circle!");
+        }
     }
     public void testBalancedBinaryTree() {
         BalancedBinaryTree usage = new BalancedBinaryTree();
