@@ -7,7 +7,6 @@
  * Output: 7 -> 0 -> 8
  */
 import ht.ListNode;
-
 public class AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         return helper(l1, l2);
