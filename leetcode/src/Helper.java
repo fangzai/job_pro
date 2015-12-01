@@ -68,16 +68,16 @@ public class Helper {
         //helper.testPow();
         //helper.testSingleNumberII();
         //helper.testReorderList();
-        helper.testFractiontoRecurringDecimal();
-        char a = '1';
-        char b = '2';
-        System.out.println(a);
-        System.out.println(a);
+        //helper.testFractiontoRecurringDecimal();
+        helper.testPermutationSequence();
     }
-    public void swap(char a, char b) {
-        char tmp = a;
-        a = b;
-        b = tmp;
+    public void testPermutationSequence() {
+        PermutationSequence usage = new PermutationSequence();
+        int n = 3;
+        int k = 5;
+        String res = usage.getPermutation(n, k);
+        System.out.println(res);
+        usage.display();
     }
     public void testFractiontoRecurringDecimal() {
         FractiontoRecurringDecimal usage = new FractiontoRecurringDecimal();

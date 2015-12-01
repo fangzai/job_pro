@@ -16,9 +16,14 @@ import java.util.ArrayList;
  *
  */
 public class PermutationSequence {
-    ArrayList<String> result = new ArrayList<String>();
+    private ArrayList<String> result = new ArrayList<String>();
     public String getPermutation(int n, int k) {
         return helper(n, k);
+    }
+    public void display() {
+        for (String each : result) {
+            System.out.println(each);
+        }
     }
     private String helper(int n, int k) {
         int len = 1;
@@ -28,26 +33,77 @@ public class PermutationSequence {
         if (k > len) {
             return "";
         }
-        String ls = new String();
+        StringBuilder ls = new StringBuilder();
         for (int i = 1; i <= n; ++i) {
-            ls += i;
+            ls.append(i + "");
         }
-        return recursive(ls, n, k);
+        //recursive(ls, 0, ls.length() - 1);
+        //return this.result.get(k - 1);
+        //return  this.iterative(ls, k);
+        return iterativeLehmer(ls, n, k);
     }
-    private void swap(char a, char b) {
-        char tmp = b;
-        b = a;
-        a = tmp;
-    }
-    private String recursive(String ls, int m, int k) {
+    private void recursive(StringBuilder ls, int m, int k) {
         if (m == k) {
-            this.result.add(ls);
+            this.result.add(ls.toString());
         } else {
             for (int i = m; i <= k; ++i) {
-                swap(ls.charAt(m), ls.charAt(i));
-            }
+                char tmp = ls.charAt(i);
+                ls.setCharAt(i, ls.charAt(m));
+                ls.setCharAt(m, tmp);
 
+                recursive(ls, m + 1, k);
+
+                tmp = ls.charAt(i);
+                ls.setCharAt(i, ls.charAt(m));
+                ls.setCharAt(m, tmp);
+            }
         }
-        return "";
+    }
+    private String iterative(StringBuilder ls, int k) {
+        String str = ls.toString();
+        for (int i = 0; i < k - 1; ++i) {
+            str = generateNext(str);
+        }
+        return str;
+    }
+    private String generateNext(String str) {
+        StringBuilder ls = new StringBuilder(str);
+        int j = ls.length() - 1;
+        while (((j - 1) >= 0) && (ls.charAt(j - 1) > ls.charAt(j))) {
+            j--; //找第一个违反规则的index
+        }
+        int start = j - 1;
+        j = ls.length() - 1;
+        while (ls.charAt(j) <= ls.charAt(start)) {
+            j--;
+        }
+        int end = j;
+        char tmp = ls.charAt(start);
+        ls.setCharAt(start, ls.charAt(end));
+        ls.setCharAt(end, tmp);
+
+        String pre = ls.substring(0, start + 1);
+        StringBuilder post = new StringBuilder(ls.substring(start + 1));
+        post.reverse();
+        pre += post.toString();
+        return pre;
+    }
+    private String iterativeLehmer(StringBuilder ls, int n, int k) {
+        ArrayList<Integer> factor = new ArrayList<Integer>();
+        factor.add(1);
+        int last = 1;
+        for (int i = 1; i < n; ++i) {
+            factor.add(factor.get(i - 1) * i);
+        }
+        k--; //从０开始
+        String s;
+        StringBuilder res = new StringBuilder();
+        for (int i = n-1; i >= 0; --i) {
+            int code = k / factor.get(i);
+            k %= factor.get(i);
+            res.append(ls.charAt(code));
+            ls.deleteCharAt(code);
+        }
+        return res.toString();
     }
 }
