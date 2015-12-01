@@ -64,8 +64,50 @@ public class Helper {
         //helper.testLinkedListCycle();
         //helper.testLinkedListCycleII();
         //helper.testTwoSum();
-        helper.testAddTwoNumbers();
-
+        //helper.testAddTwoNumbers();
+        //helper.testPow();
+        //helper.testSingleNumberII();
+        //helper.testReorderList();
+        helper.testFractiontoRecurringDecimal();
+        char a = '1';
+        char b = '2';
+        System.out.println(a);
+        System.out.println(a);
+    }
+    public void swap(char a, char b) {
+        char tmp = a;
+        a = b;
+        b = tmp;
+    }
+    public void testFractiontoRecurringDecimal() {
+        FractiontoRecurringDecimal usage = new FractiontoRecurringDecimal();
+        //int numberator = 2;
+        //int denominator = 3;
+        int numberator = -1;
+        int denominator = -2147483648;
+        String res = usage.fractionToDecimal(numberator, denominator);
+        System.out.println(res);
+    }
+    public void testReorderList() {
+        ReorderList usage = new ReorderList();
+        int[] nums = {1, 2, 3, 4, 5, 6, 7};
+        ListLink myLink = new ListLink();
+        ListNode head = myLink.createListLink(nums, 0);
+        myLink.display();
+        usage.reorderList(head);
+        myLink.display(head);
+    }
+    public void testSingleNumberII() {
+        SingleNumberII usage = new SingleNumberII();
+        int[] nums = {1, 3, 2, 2, 3, 3, 2};
+        int res = usage.singleNumber(nums);
+        System.out.println(res);
+    }
+    public void testPow() {
+        Pow usage = new Pow();
+        double x = 2;
+        int n = -3;
+        System.out.println(usage.myPow(x, n));
     }
     public void testAddTwoNumbers() {
         AddTwoNumbers usage = new AddTwoNumbers();
