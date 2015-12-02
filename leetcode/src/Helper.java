@@ -2,12 +2,15 @@
  * Created by hduser on 15-11-18.
  */
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import ht.ListLink;
 import ht.ListNode;
 import ht.TreeNode;
 import ht.BinaryTree;
+import ht.TreeLinkNode;
+import ht.BinaryLinkTree;
 public class Helper {
     public static void main(String args[]){
         //System.out.println("Hello world!");
@@ -69,7 +72,87 @@ public class Helper {
         //helper.testSingleNumberII();
         //helper.testReorderList();
         //helper.testFractiontoRecurringDecimal();
-        helper.testPermutationSequence();
+        //helper.testPermutationSequence();
+        //helper.testConvertSortedArraytoBinarySearchTree();
+        //helper.testConvertSortedListtoBinarySearchTree();
+        //helper.testPopulatingNextRightPointersinEachNode();
+        //helper.testTriangle();
+        //helper.testBestTimetoBuyandSellStock();
+        //helper.testBestTimetoBuyandSellStockII();
+        //helper.testSumRoottoLeafNumbers();
+        //helper.testFindPeakElement();
+        helper.testGenerateParentheses();
+    }
+    public void testGenerateParentheses() {
+        GenerateParentheses usage = new GenerateParentheses();
+        int n = 0;
+        List<String> res = usage.generateParenthesis(n);
+        System.out.println(res);
+    }
+    public void testFindPeakElement() {
+        FindPeakElement usage = new FindPeakElement();
+        int[] nums = {1, 2, 3, 1};
+        int res = usage.findPeakElement(nums);
+        System.out.println(res);
+    }
+    public void testSumRoottoLeafNumbers() {
+        SumRoottoLeafNumbers usage = new SumRoottoLeafNumbers();
+        BinaryTree myTree = new BinaryTree();
+        //int[] nums = {1, 2, -1, -1, 3, -1, -1};
+        int[] nums = {1, 2, 4, -1, -1, -1, 3, -1, -1};
+        TreeNode tree = myTree.createBinaryTree(nums);
+        int res = usage.sumNumbers(tree);
+        System.out.println(res);
+    }
+    public void testBestTimetoBuyandSellStockII() {
+        BestTimetoBuyandSellStockII usage = new BestTimetoBuyandSellStockII();
+        int[] prices = {4, 2, 5, 8, 9, 10, 13, 8, 20};
+        int res = usage.maxProfit(prices);
+        System.out.println(res);
+    }
+    public void testBestTimetoBuyandSellStock() {
+        BestTimetoBuyandSellStock usage = new BestTimetoBuyandSellStock();
+        int[] prices = {4, 2, 5, 8, 9, 10, 13, 8, 20};
+        int res = usage.maxProfit(prices);
+        System.out.println(res);
+    }
+    public void testTriangle() {
+        Triangle usage = new Triangle();
+        List<List<Integer>> data = new ArrayList<List<Integer>>();
+        int[][] nums = {{2}, {3, 4}, {6, 5, 7},{4, 1, 8, 3}};
+        for (int i = 0; i < nums.length; ++i) {
+            ArrayList<Integer> tmp = new ArrayList<Integer>();
+            for (int j = 0; j < nums[i].length; ++j) {
+                tmp.add(nums[i][j]);
+            }
+            data.add(tmp);
+        }
+        int res = usage.minimumTotal(data);
+        System.out.println(res);
+    }
+    public void testPopulatingNextRightPointersinEachNode() {
+        PopulatingNextRightPointersinEachNode usage = new PopulatingNextRightPointersinEachNode();
+        int[] nums = {1 ,2 , 3, -1, -1, 4, -1, -1, 5, 6, -1, -1, 7, -1, -1};
+        BinaryLinkTree myLinkTree = new BinaryLinkTree();
+        TreeLinkNode tree = myLinkTree.createBinaryTree(nums);
+        usage.connect(tree);
+    }
+    public void testConvertSortedListtoBinarySearchTree() {
+        ConvertSortedListtoBinarySearchTree usage = new ConvertSortedListtoBinarySearchTree();
+        int[] nums = {2, 3, 5, 6, 7, 8, 10};
+        ListLink myLink = new ListLink();
+        ListNode head = myLink.createListLink(nums, nums.length - 0);
+
+        TreeNode bst = usage.sortedListToBST(head);
+        BinaryTreeLevelOrderTraversal vis = new BinaryTreeLevelOrderTraversal();
+        System.out.println(vis.levelOrder(bst));
+    }
+    public void testConvertSortedArraytoBinarySearchTree() {
+        ConvertSortedArraytoBinarySearchTree usage = new ConvertSortedArraytoBinarySearchTree();
+        int[] nums = {2, 3, 5, 6, 7, 8, 10};
+        TreeNode bst = usage.sortedArrayToBST(nums);
+        BinaryTreeLevelOrderTraversal test = new BinaryTreeLevelOrderTraversal();
+        System.out.println(test.levelOrder(bst));
     }
     public void testPermutationSequence() {
         PermutationSequence usage = new PermutationSequence();
