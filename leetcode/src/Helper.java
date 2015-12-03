@@ -81,7 +81,47 @@ public class Helper {
         //helper.testBestTimetoBuyandSellStockII();
         //helper.testSumRoottoLeafNumbers();
         //helper.testFindPeakElement();
-        helper.testGenerateParentheses();
+        //helper.testGenerateParentheses();
+        //helper.testSwapNodesinPairs();
+        //helper.testPermutations();
+        //helper.testPermutationsII();
+        //helper.testRotateImage();
+        helper.testCombinations();
+    }
+    public void testCombinations() {
+        Combinations usage = new Combinations();
+        int n = 4;
+        int k = 2;
+        List<List<Integer>> res = usage.combine(n, k);
+        System.out.println(res);
+    }
+    public void testRotateImage() {
+        RotateImage usage = new RotateImage();
+        int[][] matrix = {{1, 2, 3},{4, 5, 6},{7, 8, 9}};
+        displayMatrix(matrix);
+        usage.rotate(matrix);
+        displayMatrix(matrix);
+    }
+    public void testPermutationsII() {
+        PermutationsII usage = new PermutationsII();
+        int[] nums = {1, 1, 2};
+        List<List<Integer>> res = usage.permuteUnique(nums);
+        System.out.println(res);
+    }
+    public void testPermutations() {
+        Permutations usage = new Permutations();
+        int[] nums = {1, 2, 3};
+        List<List<Integer>> res = usage.permute(nums);
+        System.out.println(res);
+    }
+    public void testSwapNodesinPairs() {
+        SwapNodesinPairs usage = new SwapNodesinPairs();
+        int[] nums = {1, 2, 3, 4, 5, 6, 7};
+        ListLink myLink = new ListLink();
+        ListNode head = myLink.createListLink(nums, 1);
+        myLink.display();
+        head = usage.swapPairs(head);
+        myLink.display(head);
     }
     public void testGenerateParentheses() {
         GenerateParentheses usage = new GenerateParentheses();
@@ -712,5 +752,22 @@ public class Helper {
             System.out.print(nums[i] + "\t");
         }
         System.out.println();
+    }
+    private void displayMatrix(int[][] matrix) {
+        System.out.println("The matrix is ......");
+        for (int i = 0; i < matrix.length; ++i) {
+            for (int j = 0; j < matrix[i].length; ++j) {
+                System.out.print(matrix[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
+    private void displayMatrix(double[][] matrix) {
+        for (int i = 0; i < matrix.length; ++i) {
+            for (int j = 0; j < matrix[0].length; ++j) {
+                System.out.print(matrix[i][j] + "\t");
+            }
+            System.out.println();
+        }
     }
 }
