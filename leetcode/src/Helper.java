@@ -88,7 +88,46 @@ public class Helper {
         //helper.testRotateImage();
         //helper.testCombinations();
         //helper.testSubsets();
-        helper.testSubsetsII();
+        //helper.testSubsetsII();
+        //helper.testReverseLinkedListII();
+        //helper.testBinaryTreeInorderTraversal();
+        //helper.testBinaryTreePreorderTraversal();
+        helper.testBinaryTreePostorderTraversal();
+    }
+    public void testBinaryTreePostorderTraversal() {
+        BinaryTreePostorderTraversal usage = new BinaryTreePostorderTraversal();
+        int[] nums = {1 ,2 , 3, -1, -1, 4, -1, -1, 5, 6, -1, -1, 7, -1, -1};
+        BinaryTree myTree = new BinaryTree();
+        TreeNode tree = myTree.createBinaryTree(nums);
+        List<Integer> result = usage.postorderTraversal(tree);
+        System.out.println(result);
+    }
+    public void testBinaryTreePreorderTraversal() {
+        BinaryTreePreorderTraversal usage = new BinaryTreePreorderTraversal();
+        int[] nums = {1 ,2 , 3, -1, -1, 4, -1, -1, 5, 6, -1, -1, 7, -1, -1};
+        BinaryTree myTree = new BinaryTree();
+        TreeNode tree = myTree.createBinaryTree(nums);
+        List<Integer> result = usage.preorderTraversal(tree);
+        System.out.println(result);
+    }
+    public void testBinaryTreeInorderTraversal() {
+        BinaryTreeInorderTraversal usage = new BinaryTreeInorderTraversal();
+        int[] nums = {1 ,2 , 3, -1, -1, 4, -1, -1, 5, 6, -1, -1, 7, -1, -1};
+        BinaryTree myTree = new BinaryTree();
+        TreeNode tree = myTree.createBinaryTree(nums);
+        List<Integer> result = usage.inorderTraversal(tree);
+        System.out.println(result);
+    }
+    public void testReverseLinkedListII() {
+        ReverseLinkedListII usage = new ReverseLinkedListII();
+        int[] nums = {1, 2, 3, 4, 5, 6};
+        int m = 2;
+        int n = 7;
+        ListLink myLink = new ListLink();
+        ListNode head = myLink.createListLink(nums);
+        myLink.display();
+        head = usage.reverseBetween(head, m, n);
+        myLink.display(head);
     }
     public void testSubsetsII() {
         SubsetsII usage = new SubsetsII();
