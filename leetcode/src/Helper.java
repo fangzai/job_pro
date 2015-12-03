@@ -86,7 +86,22 @@ public class Helper {
         //helper.testPermutations();
         //helper.testPermutationsII();
         //helper.testRotateImage();
-        helper.testCombinations();
+        //helper.testCombinations();
+        //helper.testSubsets();
+        helper.testSubsetsII();
+    }
+    public void testSubsetsII() {
+        SubsetsII usage = new SubsetsII();
+        //int[] nums = {1, 2, 3};
+        int[] nums = {4, 4, 4, 1, 4};
+        List<List<Integer>> res = usage.subsetsWithDup(nums);
+        System.out.println(res);
+    }
+    public void testSubsets() {
+        Subsets usage = new Subsets();
+        int[] nums = {1, 2, 3};
+        List<List<Integer>> res = usage.subsets(nums);
+        System.out.println(res);
     }
     public void testCombinations() {
         Combinations usage = new Combinations();

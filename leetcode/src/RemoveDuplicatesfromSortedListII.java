@@ -34,7 +34,6 @@ public class RemoveDuplicatesfromSortedListII {
                 current.next = p;
                 current = current.next;
             }
-
         }
         return head.next;
     }
