@@ -92,7 +92,22 @@ public class Helper {
         //helper.testReverseLinkedListII();
         //helper.testBinaryTreeInorderTraversal();
         //helper.testBinaryTreePreorderTraversal();
-        helper.testBinaryTreePostorderTraversal();
+        //helper.testBinaryTreePostorderTraversal();
+        //helper.testFindMinimuminRotatedSortedArray();
+        helper.testNextPermutation();
+    }
+    public void testNextPermutation() {
+        NextPermutation usage = new NextPermutation();
+        int[] nums = {1, 2, 3};
+        displayArray(nums);
+        usage.nextPermutation(nums);
+        displayArray(nums);
+    }
+    public void testFindMinimuminRotatedSortedArray() {
+        FindMinimuminRotatedSortedArray usage = new FindMinimuminRotatedSortedArray();
+        int[] nums = {4, 5, 6, 7, 0, 1, 2};
+        int res = usage.findMin(nums);
+        System.out.println(res);
     }
     public void testBinaryTreePostorderTraversal() {
         BinaryTreePostorderTraversal usage = new BinaryTreePostorderTraversal();
