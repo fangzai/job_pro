@@ -28,21 +28,23 @@ public class Combinations {
         List<List<Integer>> result = new ArrayList<>();
         ArrayList<Integer> ls = new ArrayList<>();
         int start = 0;
-        dfs(result, ls, src, depth, n, k, start);
+        dfs(result, ls, src, depth, k, start);
         return result;
     }
     private void dfs(List<List<Integer>> result, ArrayList<Integer> ls,
-                     ArrayList<Integer> src, int depth, int n, int k, int start) {
+                     ArrayList<Integer> src, int depth, int k, int start) {
         // result 保存最后结果
         // ls　临时结果
         //　src原list
         // depth递归深度
         if (depth >= k) {
             result.add((List<Integer>) ls.clone());
+            return;
         }else {
-            ls.add(src.get(start));
-            for (int i = start + 1; i < src.size() - depth; ++i ) {
-                dfs(result, ls, src, depth + 1, n, k, i);
+            for (int i = start; i < src.size(); ++i ) {
+                ls.add(src.get(i));
+                dfs(result, ls, src, depth + 1, k, i + 1);
+                ls.remove(ls.size() - 1);
             }
         }
     }

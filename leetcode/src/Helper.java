@@ -90,8 +90,8 @@ public class Helper {
     }
     public void testCombinations() {
         Combinations usage = new Combinations();
-        int n = 4;
-        int k = 2;
+        int n = 0;
+        int k = 1;
         List<List<Integer>> res = usage.combine(n, k);
         System.out.println(res);
     }
