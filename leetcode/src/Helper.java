@@ -94,7 +94,31 @@ public class Helper {
         //helper.testBinaryTreePreorderTraversal();
         //helper.testBinaryTreePostorderTraversal();
         //helper.testFindMinimuminRotatedSortedArray();
-        helper.testNextPermutation();
+        //helper.testNextPermutation();
+        //helper.testSearchinRotatedSortedArray();
+        //helper.testSearchInsertPosition();
+        helper.testMaximumSubarray();
+    }
+    public void testMaximumSubarray() {
+        MaximumSubarray usage = new MaximumSubarray();
+        int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+        int res = usage.maxSubArray(nums);
+        System.out.println(res);
+    }
+    public void testSearchInsertPosition() {
+        SearchInsertPosition usage = new SearchInsertPosition();
+        int[] nums = {1, 2, 5, 8};
+        int target = 3;
+        int res = usage.searchInsert(nums, target);
+        System.out.println(res);
+    }
+    public void testSearchinRotatedSortedArray() {
+        SearchinRotatedSortedArray usage = new SearchinRotatedSortedArray();
+        //int[] nums = {4, 5, 6, 7, 0, 1, 2};
+        int[] nums = {4};
+        int target = 1;
+        int res = usage.search(nums, target);
+        System.out.println(res);
     }
     public void testNextPermutation() {
         NextPermutation usage = new NextPermutation();
