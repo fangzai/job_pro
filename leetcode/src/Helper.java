@@ -11,6 +11,8 @@ import ht.TreeNode;
 import ht.BinaryTree;
 import ht.TreeLinkNode;
 import ht.BinaryLinkTree;
+import sun.security.provider.ConfigFile;
+
 public class Helper {
     public static void main(String args[]){
         //System.out.println("Hello world!");
@@ -97,7 +99,51 @@ public class Helper {
         //helper.testNextPermutation();
         //helper.testSearchinRotatedSortedArray();
         //helper.testSearchInsertPosition();
-        helper.testMaximumSubarray();
+        //helper.testMaximumSubarray();
+        //helper.testSpiralMatrix();
+        //helper.testSpiralMatrixII();
+        //helper.testValidateBinarySearchTree();
+        helper.testFlattenBinaryTreetoLinkedList();
+    }
+    public void testFlattenBinaryTreetoLinkedList() {
+        FlattenBinaryTreetoLinkedList usage = new FlattenBinaryTreetoLinkedList();
+        int[] nums = {1 ,2 , 3, -1, -1, 4, -1, -1, 5, 6, -1, -1, 7, -1, -1};
+        BinaryTree myTree = new BinaryTree();
+        TreeNode tree = myTree.createBinaryTree(nums);
+        BinaryTreeLevelOrderTraversal level = new BinaryTreeLevelOrderTraversal();
+        List<List<Integer>> res = level.levelOrder(tree);
+        System.out.println(res);
+        usage.flatten(tree);
+        System.out.println("After flattenning the tree is ......");
+        res.clear();
+        res = level.levelOrder(tree);
+        System.out.println(res);
+
+    }
+    public void testValidateBinarySearchTree() {
+        ValidateBinarySearchTree usage = new ValidateBinarySearchTree();
+        int[] nums = {8 ,4 , 3, -1, -1, 6, -1, -1, 10, 9, -1, -1, 10, -1, -1};
+        BinaryTree myTree = new BinaryTree();
+        TreeNode tree = myTree.createBinaryTree(nums);
+        if (usage.isValidBST(tree)) {
+            System.out.println("This tree is binary search tree!");
+        } else {
+            System.out.println("This tree is not binary search tree!");
+        }
+
+    }
+    public void testSpiralMatrixII() {
+        SpiralMatrixII usage = new SpiralMatrixII();
+        int n = 3;
+        int[][] matrix = usage.generateMatrix(n);
+        displayMatrix(matrix);
+    }
+    public void testSpiralMatrix() {
+        SpiralMatrix usage = new SpiralMatrix();
+        int[][] matrix = {{ 1, 2, 3 }, {4, 5, 6 },{7, 8, 9 }};
+        displayMatrix(matrix);
+        List<Integer> res = usage.spiralOrder(matrix);
+        System.out.println(res);
     }
     public void testMaximumSubarray() {
         MaximumSubarray usage = new MaximumSubarray();
