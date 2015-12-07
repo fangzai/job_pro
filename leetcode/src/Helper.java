@@ -108,7 +108,46 @@ public class Helper {
         //helper.testSortList();
         //helper.testBinaryTreeRightSideView();
         //helper.testMergekSortedLists();
-        helper.testRotateList();
+        //helper.testRotateList();
+        //helper.testPartitionList();
+        //helper.testUniqueBinarySearchTrees();
+        //helper.testUniqueBinarySearchTreesII();
+        //helper.testContainerWithMostWater();
+        helper.testTrappingRainWater();
+    }
+    public void testTrappingRainWater() {
+        TrappingRainWater usage = new TrappingRainWater();
+        //int[] height = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
+        int[] height = {2, 0, 2};
+        int res = usage.trap(height);
+        System.out.println(res);
+    }
+    public void testContainerWithMostWater() {
+        ContainerWithMostWater usage = new ContainerWithMostWater();
+        int[] nums = {1, 2, 3, 2, 4};
+        int res = usage.maxArea(nums);
+        System.out.println(res);
+    }
+    public void testUniqueBinarySearchTreesII() {
+        UniqueBinarySearchTreesII usage = new UniqueBinarySearchTreesII();
+        int n = 3;
+        List<TreeNode> res = usage.generateTrees(n);
+    }
+    public void testUniqueBinarySearchTrees() {
+        UniqueBinarySearchTrees usage = new UniqueBinarySearchTrees();
+        int n = 3;
+        int res = usage.numTrees(n);
+        System.out.println(res);
+    }
+    public void testPartitionList() {
+        PartitionList usage = new PartitionList();
+        int[] nums = {1, 4, 3, 2, 5, 2};
+        ListLink myLink = new ListLink();
+        ListNode head = myLink.createListLink(nums);
+        myLink.display();
+        int x = 3;
+        head = usage.partition(head, x);
+        myLink.display(head);
     }
     public void testRotateList() {
         RotateList usage = new RotateList();
