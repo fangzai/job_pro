@@ -103,7 +103,65 @@ public class Helper {
         //helper.testSpiralMatrix();
         //helper.testSpiralMatrixII();
         //helper.testValidateBinarySearchTree();
-        helper.testFlattenBinaryTreetoLinkedList();
+        //helper.testFlattenBinaryTreetoLinkedList();
+        //helper.testInsertionSortList();
+        //helper.testSortList();
+        //helper.testBinaryTreeRightSideView();
+        //helper.testMergekSortedLists();
+        helper.testRotateList();
+    }
+    public void testRotateList() {
+        RotateList usage = new RotateList();
+        int[] nums = {1, 2, 3, 4, 5};
+        ListLink myLink = new ListLink();
+        ListNode head = myLink.createListLink(nums);
+        myLink.display();
+        int k = 5;
+        head = usage.rotateRight(head, k);
+        myLink.display(head);
+    }
+    public void testMergekSortedLists() {
+        MergekSortedLists usage = new MergekSortedLists();
+        int len = 3;
+        ListNode[] lists = new ListNode[len];
+        int[] nums1 = {2, 6, 9, 12};
+        int[] nums2 = {4, 6, 8, 10};
+        int[] nums3 = {-1, 3, 14};
+        ListLink myLink = new ListLink();
+        lists[0] = myLink.createListLink(nums1);
+        myLink.display();
+        lists[1] = myLink.createListLink(nums2);
+        myLink.display();
+        lists[2] = myLink.createListLink(nums3);
+        myLink.display();
+        ListNode res = usage.mergeKLists(lists);
+        myLink.display(res);
+    }
+    public void testBinaryTreeRightSideView() {
+        BinaryTreeRightSideView usage = new BinaryTreeRightSideView();
+        int[] nums = {1 ,2 , 3, -1, -1, 4, -1, -1, 5, 6, -1, -1, 7, -1, -1};
+        BinaryTree myTree = new BinaryTree();
+        TreeNode tree = myTree.createBinaryTree(nums);
+        List<Integer> res = usage.rightSideView(tree);
+        System.out.println(res);
+    }
+    public void testSortList() {
+        SortList usage = new SortList();
+        int[] nums = {10, 4, 2, 13, 1};
+        ListLink myLink = new ListLink();
+        ListNode head = myLink.createListLink(nums);
+        myLink.display();
+        head = usage.sortList(head);
+        myLink.display(head);
+    }
+    public void testInsertionSortList() {
+        InsertionSortList usage = new InsertionSortList();
+        int[] nums = {10, 4, 2, 13, 1, 8};
+        ListLink myLink = new ListLink();
+        ListNode head = myLink.createListLink(nums);
+        myLink.display();
+        head = usage.insertionSortList(head);
+        myLink.display(head);
     }
     public void testFlattenBinaryTreetoLinkedList() {
         FlattenBinaryTreetoLinkedList usage = new FlattenBinaryTreetoLinkedList();
