@@ -73,9 +73,26 @@ iSort list = case (list) of
 elemNum :: Int -> [Int] -> Int
 elemNum target list = sum [1 | ele <- list, ele == target]
 
+-- 删除列表中的某元素
+deleteElem :: Int -> [Int] -> [Int]
+deleteElem target list = [ sn | sn <- list, target /= sn]
+
 -- 列表概括实现获取列表中出现１次的元素
 
-
+unique :: [Int] -> [Int]
+unique list = [sn | sn <- list, (elemNum sn list) == 1]
+-- 模式匹配实现列表中只出现一次的元素
+uniqueRec :: [Int] -> [Int]
+uniqueRec list = case (list) of
+		[]		-> []
+		(x:xs)	-> if (elemNum x xs) == 0 then x : uniqueRec xs
+				   else uniqueRec (deleteElem x xs)
+-- 模式匹配实现列表中出现过的元素
+uniqueElem :: [Int] -> [Int]
+uniqueElem list = case (list) of
+		[]		-> []
+		(x:xs)	-> if (elemNum x xs) == 0 then x : uniqueElem xs
+				   else uniqueElem xs
 
 ------------
 -- unit test
@@ -83,6 +100,13 @@ elemNum target list = sum [1 | ele <- list, ele == target]
 
 target = 7 
 numList = [7, 7, 10, (-1)]
+-- for unique test
+testUnique :: [Int]
+testUnique = unique numList
+
+-- for uniqueRec test
+testUniqueRec :: [Int]
+testUniqueRec = uniqueRec numList
 
 -- for elemNum test
 testElemNum :: Int
